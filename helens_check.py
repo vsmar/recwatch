@@ -1,14 +1,19 @@
+import json
+from pathlib import Path
+
 import requests
 import argparse
 
-PERMIT_ID = "4675309"
-TARGET_DATES = ["2026-08-23", "2026-08-25"]
+CONFIG_FILE = Path("config.json")
 
-DISCORD_WEBHOOK = "https://discordapp.com/api/webhooks/1539401700769661069/sx3hlItvhCeMmAKWEHEXS6X_D-JXZHs5LziUmbDTRtF1qI6eYGmlHAKKM1hyIqLejSfo"
+with CONFIG_FILE.open("r", encoding="utf-8") as file:
+    config = json.load(file)
+
+DISCORD_WEBHOOK = config["discord_webhook"]
+PERMIT_ID = config["permit_id"]
+TARGET_DATES = sorted(config["target_dates"])
 
 AVAILABILITY_URL = f"https://www.recreation.gov/api/permits/{PERMIT_ID}/availability"
-
-TARGET_DATES = sorted(TARGET_DATES)
 
 params = {
     "start_date": f"{TARGET_DATES[0]}T00:00:00.000Z",
