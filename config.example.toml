@@ -1,0 +1,29 @@
+# config.toml
+discord_webhook = "YOUR_DISCORD_WEBHOOK_HERE"
+check_interval_minutes = 30
+
+
+[[watch]]
+permit_name = "Mt. St. Helens"
+permit_id = "4675309"
+party_size = 4
+active = true
+
+dates = [
+  2026-07-04,
+  { start = 2026-09-12, end = 2026-09-14 },
+  2026-10-12,
+  2026-10-13,
+  { start = 2026-11-01, end = 2026-11-03 },
+]
+
+
+[[watch]]
+permit_name = "Enchantments"
+permit_id = "233273"
+party_size = 1
+active = true
+
+dates = [
+  { start = 2026-09-12, end = 2026-09-14 },
+]

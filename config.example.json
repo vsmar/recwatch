@@ -1,9 +1,0 @@
-{
-  "discord_webhook": "YOUR_DISCORD_WEBHOOK_HERE",
-  "permit_id": "4675309",
-  "permit_name": "Mt. St. Helens",
-  "target_dates": [
-    "2026-08-23",
-    "2026-08-30"
-  ]
-}
